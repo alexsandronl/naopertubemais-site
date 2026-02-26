@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade — Não me pertube mais!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a; color: #e0e0e0;
+            line-height: 1.7; padding: 24px 16px;
+        }
+        .container { max-width: 720px; margin: 0 auto; }
+        h1 { color: #ff6b35; font-size: 1.8rem; margin-bottom: 8px; }
+        h2 { color: #ff6b35; font-size: 1.2rem; margin: 28px 0 10px; border-bottom: 1px solid #222; padding-bottom: 6px; }
+        p, li { font-size: 0.95rem; margin-bottom: 10px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; }
+        .badge {
+            display: inline-block; background: #1a1a1a; border: 1px solid #333;
+            border-radius: 8px; padding: 4px 12px; font-size: 0.8rem; color: #aaa; margin-bottom: 20px;
+        }
+        .icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+        a { color: #ff6b35; }
+        .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #222; font-size: 0.8rem; color: #666; }
+        code { background: #1a1a1a; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="icon">🛡️</span>
+        <h1>Política de Privacidade</h1>
+        <p><strong>Não me pertube mais!</strong></p>
+        <span class="badge">Última atualização: julho de 2025</span>
+
+        <h2>1. Introdução</h2>
+        <p>
+            O aplicativo <strong>"Não me pertube mais!"</strong> (doravante "App") foi desenvolvido por
+            <strong>ITPlug</strong> e tem como objetivo bloquear chamadas telefônicas indesejadas
+            no dispositivo Android do usuário. Esta política descreve como o App lida com informações
+            do dispositivo e do usuário.
+        </p>
+
+        <h2>2. Dados que NÃO coletamos</h2>
+        <p>O App <strong>não coleta, armazena, transmite nem compartilha</strong> nenhum dado pessoal com terceiros. Especificamente:</p>
+        <ul>
+            <li>Não coletamos nomes, e-mails ou informações de identificação pessoal.</li>
+            <li>Não coletamos nem transmitimos o conteúdo de chamadas.</li>
+            <li>Não utilizamos serviços de análise (analytics) ou rastreamento.</li>
+            <li>Não exibimos anúncios de nenhum tipo.</li>
+            <li>Não possuímos servidores que recebam dados do App.</li>
+            <li>O App funciona 100% offline — não requer conexão com a internet.</li>
+        </ul>
+
+        <h2>3. Dados armazenados localmente</h2>
+        <p>O App armazena os seguintes dados <strong>exclusivamente no dispositivo do usuário</strong>, em um banco de dados SQLite local:</p>
+        <ul>
+            <li><strong>Regras de bloqueio:</strong> números de telefone ou máscaras configurados pelo usuário.</li>
+            <li><strong>Histórico de chamadas bloqueadas:</strong> número da chamada, data/hora do bloqueio e a regra que o originou.</li>
+        </ul>
+        <p>
+            Esses dados nunca saem do dispositivo. Se o App for desinstalado, todos os dados são
+            removidos automaticamente pelo sistema Android.
+        </p>
+
+        <h2>4. Permissões utilizadas</h2>
+        <p>O App solicita as seguintes permissões do Android, todas estritamente necessárias para seu funcionamento:</p>
+        <ul>
+            <li><code>READ_PHONE_STATE</code> — Detectar chamadas recebidas para aplicar as regras de bloqueio.</li>
+            <li><code>READ_CALL_LOG</code> — Exigido pelo Android para que o serviço de triagem de chamadas (CallScreeningService) funcione.</li>
+            <li><code>MANAGE_OWN_CALLS</code> — Gerenciar o bloqueio/rejeição de chamadas no sistema.</li>
+            <li><code>POST_NOTIFICATIONS</code> — Exibir notificação persistente indicando que o monitoramento está ativo.</li>
+            <li><code>RECEIVE_BOOT_COMPLETED</code> — Reiniciar o monitoramento automaticamente após reinicialização do dispositivo.</li>
+            <li><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_PHONE_CALL</code> — Manter o serviço de monitoramento ativo em segundo plano.</li>
+            <li><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code> — Solicitar que o Android não encerre o serviço por otimização de bateria.</li>
+        </ul>
+        <p>Nenhuma dessas permissões é usada para coletar ou transmitir dados.</p>
+
+        <h2>5. Papel de triagem de chamadas</h2>
+        <p>
+            O App solicita o papel de <strong>Call Screening</strong> (triagem de chamadas) do Android.
+            Isso permite que o App analise chamadas recebidas e rejeite automaticamente aquelas que
+            correspondem às regras configuradas pelo usuário. O App <strong>não grava, escuta nem
+            intercepta</strong> o conteúdo de nenhuma chamada.
+        </p>
+
+        <h2>6. Compartilhamento de dados</h2>
+        <p>
+            O App <strong>não compartilha nenhum dado</strong> com terceiros, parceiros, redes de
+            anúncios ou quaisquer serviços externos. Não há SDKs de terceiros que coletam dados.
+        </p>
+
+        <h2>7. Segurança</h2>
+        <p>
+            Todos os dados ficam armazenados no sandbox do aplicativo, protegidos pelo sistema de
+            permissões do Android. Apenas o próprio App tem acesso ao banco de dados local.
+        </p>
+
+        <h2>8. Crianças</h2>
+        <p>
+            O App não é direcionado a crianças menores de 13 anos, porém não coleta nenhum dado
+            pessoal de nenhum usuário, independentemente da idade.
+        </p>
+
+        <h2>9. Alterações nesta política</h2>
+        <p>
+            Caso esta política seja atualizada, a nova versão será publicada nesta mesma página
+            com a data de atualização revisada. Recomendamos consultar esta página periodicamente.
+        </p>
+
+        <h2>10. Contato</h2>
+        <p>Em caso de dúvidas sobre esta política de privacidade, entre em contato:</p>
+        <ul>
+            <li><strong>Desenvolvedor:</strong> ITPlug</li>
+            <li><strong>E-mail:</strong> <a href="mailto:contato@itplug.com.br">contato@itplug.com.br</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/alexsandronl/NaoPertubeMais">github.com/alexsandronl/NaoPertubeMais</a></li>
+        </ul>
+
+        <div class="footer">
+            <p>© 2025 ITPlug — Não me pertube mais! Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
